@@ -1,0 +1,6 @@
+/** Color picker label CSS is stupid... let's fix it. **/
+.edd-knowledge-base-color-picker-label {
+    display: inline-block;
+    margin-top: 4px;
+    vertical-align: top;
+}

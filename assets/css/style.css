@@ -1,0 +1,8 @@
+/** Basic formatting for icons **/
+.edd-knowledge-base-wrapper i {
+    margin-right: 5px;
+}
+
+.edd-knowledge-base-wrapper li {
+    list-style-type: none;
+}
