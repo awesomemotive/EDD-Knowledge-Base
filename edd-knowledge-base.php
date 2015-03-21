@@ -104,6 +104,9 @@ if( ! class_exists( 'EDD_Knowledge_Base' ) ) {
             // Add our extension settings
             add_filter( 'edd_settings_extensions', array( $this, 'add_settings' ) );
 
+            // Add a link to the extension settings
+            add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+
             // Handle licensing
             if( class_exists( 'EDD_License' ) ) {
                 $license = new EDD_License( __FILE__, 'Knowledge Base', EDD_KNOWLEDGE_BASE_VER, 'Daniel J Griffiths' );
@@ -165,6 +168,18 @@ if( ! class_exists( 'EDD_Knowledge_Base' ) ) {
             );
 
             return array_merge( $settings, $new_settings );
+        }
+
+
+        /**
+         * Add a link to the KB settings
+         *
+         * @access      public
+         * @since       1.0.0
+         * @return      void
+         */
+        public function admin_menu() {
+            add_submenu_page( 'edit.php?post_type=edd_kb_article', __( 'Settings', 'edd-knowledge-base' ), __( 'Settings', 'edd-knowledge-base' ), 'manage_shop_settings', 'edit.php?post_type=download&page=edd-settings&tab=extensions#edd_settings[edd_knowledge_base_title]' );
         }
 
 
